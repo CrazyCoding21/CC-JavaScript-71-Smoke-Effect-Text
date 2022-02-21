@@ -1,0 +1,50 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+    background: orange;
+}
+.container{
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.smoke-title{
+    position: relative;
+    font-size: 4vw;
+    color: #000;
+    margin: 40px;
+    max-width: 900px;
+    user-select: none;
+}
+.smoke-title span{
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+.smoke-title span.active{
+    animation: smoke 1s linear forwards;
+    transform-origin: bottom;
+}
+@keyframes smoke{
+    0%{
+        opacity: 1;
+        filter: blur(0);
+        transform: translateX(0) translateY(0) rotate(0deg);
+    }
+    50%{
+        opacity: 1;
+        pointer-events: none;
+    }
+    100%{
+        opacity: 0;
+        filter: blur(20px);
+        transform: translateX(300px) translateY(-300px) rotate(720deg) scale(4);
+    }
+}
